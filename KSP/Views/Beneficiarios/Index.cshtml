@@ -1,0 +1,59 @@
+﻿@model IEnumerable<KSP.Models.Beneficiario>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.IdEmpleado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StrNombreCompleto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdParentesco)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DtFechaNacimiento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdSexo)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdEmpleado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StrNombreCompleto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdParentesco)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DtFechaNacimiento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdSexo)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IdBeneficiario">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.IdBeneficiario">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.IdBeneficiario">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
